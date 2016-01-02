@@ -1318,8 +1318,7 @@ class Main(QObject, Ui_MainWindow):
                 if not skip_all:
                     log.debug("Downloading subtitle '%s'" % destinationPath)
                     # print {sub.getIdFileOnline():destinationPath}
-                    httpRequests.download(
-                        'http://www.opensubtitles.org/en/download/file/%s.gz' % sub.getIdFileOnline(), destinationPath)
+                    self.OSDBServer.DownloadSubtitles({sub.getIdFileOnline():destinationPath})
                     # if self.OSDBServer.DownloadSubtitles({sub.getIdFileOnline():destinationPath}):
                     #success_downloaded += 1
                     # else:
